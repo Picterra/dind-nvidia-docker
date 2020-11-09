@@ -1,7 +1,7 @@
-ARG CUDA_IMAGE=nvidia/cuda:9.0-runtime
+ARG CUDA_IMAGE=nvidia/cuda:10.1-runtime
 FROM ${CUDA_IMAGE}
 
-ARG DOCKER_CE_VERSION=5:18.09.1~3-0~ubuntu-xenial
+ARG DOCKER_CE_VERSION=5:19.03.13~3-0~ubuntu-bionic
 
 
 RUN apt-get update -q && \
@@ -29,7 +29,6 @@ RUN set -eux; \
 		xz-utils \
 # pigz: https://github.com/moby/moby/pull/35697 (faster gzip implementation)
 		pigz \
-        zfs \
 		wget
 
 
